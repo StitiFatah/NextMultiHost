@@ -16,8 +16,8 @@ export async function getStaticPaths() {
     paths: [
       // Include host in static params!
       { params: { id: "a", host: "localhost" } },
-      { params: { id: "a", host: "next-multiple-hosts-one.vercel.app" } },
-      { params: { id: "a", host: "next-multiple-hosts-two.vercel.app" } },
+      { params: { id: "a", host: "next-multiple-hosts-one.archeroe.xyz" } },
+      { params: { id: "a", host: "next-multiple-hosts-two.archeroe.xyz" } },
     ],
     // fallback: "blocking",
     fallback: false,
