@@ -19,7 +19,8 @@ export async function getStaticPaths() {
       { params: { id: "a", host: "next-multiple-hosts-one.vercel.app" } },
       { params: { id: "a", host: "next-multiple-hosts-two.vercel.app" } },
     ],
-    fallback: "blocking",
+    // fallback: "blocking",
+    fallback: false,
   };
 }
 
