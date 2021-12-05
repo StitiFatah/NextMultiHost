@@ -36,10 +36,10 @@ export default function TestMultipleHosts({ host, id, name }) {
     <div>
       <h1>Test Multiple Hosts</h1>
       <div>
-        host : {host} , id : {id}
+        Host : {host} , Id : {id}
       </div>
       <div>
-        <strong>{name}</strong>
+        name : <strong>{name}</strong>
       </div>
     </div>
   );
