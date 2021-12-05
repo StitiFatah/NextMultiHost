@@ -1,13 +1,20 @@
+const name_dico = {
+  "next-multiple-hosts-one.archeroe.xyz": "host one",
+  "next-multiple-hosts-two.archeroe.xyz": "host two",
+};
+
 export async function getStaticProps(context) {
   console.log("getStaticProps", context);
   const host = context.params.host;
   const id = context.params.id;
+  const name = name_dico[host];
   return {
     props: {
       host,
       id,
+      name,
     },
-    revalidate: 10,
+    // revalidate: 10,
   };
 }
 
@@ -24,12 +31,15 @@ export async function getStaticPaths() {
   };
 }
 
-export default function TestMultipleHosts({ host, id }) {
+export default function TestMultipleHosts({ host, id, name }) {
   return (
     <div>
       <h1>Test Multiple Hosts</h1>
       <div>
         host : {host} , id : {id}
+      </div>
+      <div>
+        <strong>{name}</strong>
       </div>
     </div>
   );
