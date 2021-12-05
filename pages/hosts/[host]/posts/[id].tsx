@@ -1,4 +1,5 @@
 const name_dico = {
+  localhost: "host local",
   "next-multiple-hosts-one.archeroe.xyz": "host one",
   "next-multiple-hosts-two.archeroe.xyz": "host two",
 };
