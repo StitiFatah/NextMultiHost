@@ -11,15 +11,25 @@ const axiosInstance = axios.create({
   },
 });
 
-export async function getServerSideProps(context) {
-  const url = "shop/list_categories/";
+// export async function getServerSideProps(context) {
+//   const url = "shop/list_categories/";
 
-  const get_category_list = await axios.get(
-    "http://127.0.0.1:5000/domain_name/localhost/"
-  );
-  const category_list = await get_category_list.data;
-  // Pass data to the page via props
-  return { props: { category_list } };
+//   const get_category_list = await axios.get(
+//     "http://127.0.0.1:5000/domain_name/localhost/"
+//   );
+//   const category_list = await get_category_list.data;
+
+// return { props: { category_list } };
+// }
+
+export async function getServerSideProps(context) {
+  return {
+    props: {
+      category_list: {
+        name: "name",
+      },
+    },
+  };
 }
 
 export default function Test2({ category_list }) {
