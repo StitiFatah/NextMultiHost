@@ -3,7 +3,7 @@ import { axiosInstance } from "../api_login";
 export default function TestDomain() {
   const request_test_domain = () => {
     axiosInstance
-      .get("/users/test_domain/")
+      .get("/test_domain/")
       .then((response) => {
         if (response.status === 200) {
           console.log(response.data);
