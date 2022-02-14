@@ -1,6 +1,7 @@
 import Header from "@editorjs/header";
 import ImageTool from "@editorjs/image";
 import Embed from "@editorjs/embed";
+import { BASE_API_URL } from "../api_login";
 
 const configured_header = {
   class: Header,
@@ -15,7 +16,7 @@ const configured_image = {
   class: ImageTool,
   config: {
     endpoints: {
-      byFile: "http://127.0.0.1:5000/post_image_file_editor_js/",
+      byFile: `${BASE_API_URL}/blogsite/upload_image_async/`,
       byUrl: "http://127.0.0.1:5000/post_image_url_editor_js/",
     },
   },

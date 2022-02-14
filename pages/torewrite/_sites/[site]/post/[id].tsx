@@ -1,17 +1,18 @@
 import { useRouter } from "next/router";
 
 export default function Post({ site, post }) {
-  const router = useRouter();
-  if (router.isFallback) {
+  const { isFallback } = useRouter();
+  if (isFallback) {
     return <div>Loading...</div>;
+  } else {
+    return (
+      <>
+        <h1>Post</h1>
+        <div> site : {site} </div>
+        <div> post : {post} </div>
+      </>
+    );
   }
-  return (
-    <>
-      <h1>Post</h1>
-      <div> site : {site} </div>
-      <div> post : {post} </div>
-    </>
-  );
 }
 
 const mockDB = [
@@ -43,6 +44,21 @@ const mockPost = [
   },
 ];
 
+const newMockPost = [
+  {
+    id: "1",
+    post: "post1",
+  },
+  {
+    id: "2",
+    post: "post 2",
+  },
+  {
+    id: "3",
+    post: "post 3",
+  },
+];
+
 export async function getStaticPaths() {
   const static_path = mockDB.map((elem) =>
     mockPost.map((el) => {
@@ -57,7 +73,7 @@ export async function getStaticPaths() {
 
   return {
     paths: static_path.flat(),
-    fallback: "blocking",
+    fallback: true,
     // bug doesn't work with true
     // fallback: true,
   };
@@ -67,7 +83,7 @@ export async function getStaticProps(context) {
   const site = context.params.site;
   const id = context.params.id;
 
-  const post = mockPost.filter((e) => e.id === id)[0].post;
+  const post = newMockPost.filter((e) => e.id === id)[0].post;
 
   return {
     props: {

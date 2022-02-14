@@ -23,6 +23,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export default function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
+  console.log("pathname", pathname);
   // Get hostname (e.g. vercel.com, test.vercel.app, etc.)
   const hostname = req.headers.get("host");
 
@@ -37,8 +38,8 @@ export default function middleware(req: NextRequest) {
 
   const currentHost = hostname?.replace(`.${process.env.ROOT_URL}`, "");
 
+  console.log("hostname", hostname);
   console.log("current host", currentHost);
-
   // Prevent security issues – users should not be able to canonically access
   // the pages/sites folder and its respective contents. This can also be done
   // via rewrites to a custom 404 page
@@ -52,7 +53,7 @@ export default function middleware(req: NextRequest) {
     !pathname.startsWith("/api") // exclude all API routes
   ) {
     const new_path_name = pathname.replace("/torewrite", "");
-    const rewrited_path = `/torewrite/_sites/${currentHost}${new_path_name}`;
+    const rewrited_path = `http://${hostname}/torewrite/_sites/${currentHost}${new_path_name}`;
 
     console.log("current_host", currentHost);
     console.log("new_path_name", new_path_name);

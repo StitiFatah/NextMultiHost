@@ -26,14 +26,14 @@ export default function TestEditorJs() {
     ],
   };
 
-  const handleSaveAsync = React.useCallback(async () => {
-    try {
-      const savedData = await editorJS.current.save();
-      console.log(savedData);
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
+  // const handleSaveAsync = React.useCallback(async () => {
+  //   try {
+  //     const savedData = await editorJS.current.save();
+  //     console.log(savedData);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }, []);
 
   const handleSave = React.useCallback(() => {
     editorJS.current

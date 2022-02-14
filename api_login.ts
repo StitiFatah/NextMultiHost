@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // export const BASE_API_URL = "http://localhost:5000/";
-export const BASE_API_URL1 = "http://localhost:5000";
+// export const BASE_API_URL1 = "http://localhost:5000";
 
 export const BASE_API_URL =
   process.env.NODE_ENV === "production"
