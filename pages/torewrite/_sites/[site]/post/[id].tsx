@@ -55,7 +55,7 @@ const newMockPost = [
   },
   {
     id: "3",
-    post: "post 3",
+    post: "post number 3",
   },
 ];
 
