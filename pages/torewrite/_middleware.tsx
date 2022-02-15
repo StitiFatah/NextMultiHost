@@ -22,6 +22,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export default function middleware(req: NextRequest) {
+  console.log("cookies", req.cookies);
+
   const { pathname } = req.nextUrl;
   console.log("pathname", pathname);
   // Get hostname (e.g. vercel.com, test.vercel.app, etc.)
@@ -57,7 +59,7 @@ export default function middleware(req: NextRequest) {
     const rewrited_path =
       process.env.NODE_ENV === "production"
         ? `https://${hostname}/torewrite/_sites/${currentHost}${new_path_name}`
-        : `http://domain-2.localhost:3000/torewrite/_sites/${currentHost}${new_path_name}`;
+        : `/torewrite/_sites/${currentHost}${new_path_name}`;
 
     console.log("current_host", currentHost);
     console.log("new_path_name", new_path_name);
