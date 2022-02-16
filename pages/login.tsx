@@ -85,9 +85,9 @@ const Login = () => {
 
     // //
   };
-  useEffect(() => {
-    IsConnectedShort(zco, zcheck, zSetUsername);
-  }, []);
+  //   useEffect(() => {
+  // IsConnectedShort(zco, zcheck, zSetUsername);
+  //   }, []);
 
   useEffect(() => {
     get_csrf(zSetCsrfToken);
@@ -103,79 +103,79 @@ const Login = () => {
         </div>
       )}
 
-      {zco === "anonymous" && (
-        <div className="bg-white dark:bg-gray-800 w-full max-w-sm rounded-lg shadow-md overflow-hidden mx-auto">
-          <div className="py-4 px-6">
-            <h2 className="text-center font-bold text-gray-700 dark:text-white text-3xl mb-3">
-              SuperShop
-            </h2>
+      {/* {zco === "anonymous" && ( */}
+      <div className="bg-white dark:bg-gray-800 w-full max-w-sm rounded-lg shadow-md overflow-hidden mx-auto">
+        <div className="py-4 px-6">
+          <h2 className="text-center font-bold text-gray-700 dark:text-white text-3xl mb-3">
+            SuperShop
+          </h2>
 
-            <h3 className="mt-1 text-center font-medium text-gray-600 dark:text-gray-200 text-xl">
-              Login
-            </h3>
+          <h3 className="mt-1 text-center font-medium text-gray-600 dark:text-gray-200 text-xl">
+            Login
+          </h3>
 
-            {/* <p className="mt-1 text-center text-gray-500 dark:text-gray-400">Login</p> */}
+          {/* <p className="mt-1 text-center text-gray-500 dark:text-gray-400">Login</p> */}
 
-            <form onSubmit={handleSubmit}>
-              <div className="mt-4 w-full">
-                <input
-                  required
-                  onChange={handleChange}
-                  name="email"
-                  className="w-full mt-2 py-2 px-4 bg-white dark:bg-gray-800 text-gray-700 border border-gray-300 dark:border-gray-600 rounded block placeholder-gray-500 dark:placeholder-gray-400 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
-                  type="email"
-                  placeholder="Email Address"
-                  aria-label="Email Address"
-                />
-              </div>
+          <form onSubmit={handleSubmit}>
+            <div className="mt-4 w-full">
+              <input
+                required
+                onChange={handleChange}
+                name="email"
+                className="w-full mt-2 py-2 px-4 bg-white dark:bg-gray-800 text-gray-700 border border-gray-300 dark:border-gray-600 rounded block placeholder-gray-500 dark:placeholder-gray-400 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                type="email"
+                placeholder="Email Address"
+                aria-label="Email Address"
+              />
+            </div>
 
-              <div className="mt-4 w-full">
-                <input
-                  required
-                  name="password"
-                  onChange={handleChange}
-                  className="w-full mt-2 py-2 px-4 bg-white dark:bg-gray-800 text-gray-700 border border-gray-300 dark:border-gray-600 rounded block placeholder-gray-500 dark:placeholder-gray-400 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
-                  type="password"
-                  placeholder="Password"
-                  aria-label="Password"
-                />
-              </div>
+            <div className="mt-4 w-full">
+              <input
+                required
+                name="password"
+                onChange={handleChange}
+                className="w-full mt-2 py-2 px-4 bg-white dark:bg-gray-800 text-gray-700 border border-gray-300 dark:border-gray-600 rounded block placeholder-gray-500 dark:placeholder-gray-400 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                type="password"
+                placeholder="Password"
+                aria-label="Password"
+              />
+            </div>
 
-              <div className="flex justify-between items-center mt-4">
-                <Link href="#">
-                  <span className="text-gray-600 dark:text-gray-200 text-sm hover:text-gray-500">
-                    Forget Password?
-                  </span>
-                </Link>
+            <div className="flex justify-between items-center mt-4">
+              <Link href="#">
+                <span className="text-gray-600 dark:text-gray-200 text-sm hover:text-gray-500">
+                  Forget Password?
+                </span>
+              </Link>
 
-                <button
-                  className="py-2 px-4 bg-gray-700 text-white rounded hover:bg-gray-600 focus:outline-none"
-                  type="submit"
-                >
-                  Login
-                </button>
-              </div>
-            </form>
-            {LoginErrors.error !== "" && (
-              <div className="text-red-600 font-semibold mt-3 mb-5">
-                Incorrect Email address or Password, please retry.
-              </div>
-            )}
-          </div>
-
-          <div className="flex items-center justify-center py-4 bg-gray-100 dark:bg-gray-700 text-center">
-            <span className="text-gray-600 dark:text-gray-200 text-sm">
-              Don't have an account?{" "}
-            </span>
-
-            <Link href="/register">
-              <button className="text-blue-600 dark:text-blue-400 font-bold mx-2 text-sm hover:text-blue-500">
-                Register
+              <button
+                className="py-2 px-4 bg-gray-700 text-white rounded hover:bg-gray-600 focus:outline-none"
+                type="submit"
+              >
+                Login
               </button>
-            </Link>
-          </div>
+            </div>
+          </form>
+          {LoginErrors.error !== "" && (
+            <div className="text-red-600 font-semibold mt-3 mb-5">
+              Incorrect Email address or Password, please retry.
+            </div>
+          )}
         </div>
-      )}
+
+        <div className="flex items-center justify-center py-4 bg-gray-100 dark:bg-gray-700 text-center">
+          <span className="text-gray-600 dark:text-gray-200 text-sm">
+            Don't have an account?{" "}
+          </span>
+
+          <Link href="/register">
+            <button className="text-blue-600 dark:text-blue-400 font-bold mx-2 text-sm hover:text-blue-500">
+              Register
+            </button>
+          </Link>
+        </div>
+      </div>
+      {/* )} */}
     </div>
   );
 };

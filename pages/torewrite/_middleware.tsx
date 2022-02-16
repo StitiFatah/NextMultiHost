@@ -60,6 +60,7 @@ export default function middleware(req: NextRequest) {
       process.env.NODE_ENV === "production"
         ? `https://${hostname}/torewrite/_sites/${currentHost}${new_path_name}`
         : `/torewrite/_sites/${currentHost}${new_path_name}`;
+    // `/torewrite/_sites/domain-1/post/2`;
 
     console.log("current_host", currentHost);
     console.log("new_path_name", new_path_name);
