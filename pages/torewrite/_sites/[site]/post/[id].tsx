@@ -74,8 +74,7 @@ export async function getStaticPaths() {
   return {
     paths: static_path.flat(),
     fallback: true,
-    // bug doesn't work with true
-    // fallback: true,
+    // fallback: "blocking",
   };
 }
 

@@ -55,11 +55,11 @@ export default function middleware(req: NextRequest) {
     !pathname.startsWith("/api") // exclude all API routes
   ) {
     const new_path_name = pathname.replace("/torewrite", "");
-
+    console.log("new_path_name", new_path_name);
     const rewrited_path =
-      process.env.NODE_ENV === "production"
-        ? `https://${hostname}/torewrite/_sites/${currentHost}${new_path_name}`
-        : `/torewrite/_sites/${currentHost}${new_path_name}`;
+      // process.env.NODE_ENV === "production"
+      `http://${hostname}/torewrite/_sites/${currentHost}${new_path_name}`;
+    // : `/torewrite/_sites/${currentHost}${new_path_name}`;
     // `/torewrite/_sites/domain-1/post/2`;
 
     console.log("current_host", currentHost);
