@@ -13,6 +13,6 @@ export default function TestHeaders() {
         setDomain("error");
       }
     });
-  });
+  }, []);
   return <div> Test headers , domain : {domain}</div>;
 }
