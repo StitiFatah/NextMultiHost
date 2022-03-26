@@ -1,6 +1,6 @@
 export default function TestBunnyStream() {
   const iframe_link =
-    "https://iframe.mediadelivery.net/embed/31191/9fe3f539-9ca2-4132-a506-54a99d614178";
+    "https://iframe.mediadelivery.net/embed/31191/f8c27496-5ffa-48f8-ba6e-7836a9ec1e02?autoplay=false&preload=false";
 
   return (
     <iframe
