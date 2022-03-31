@@ -105,12 +105,23 @@ export default function TestEditorJs() {
         }}
       />
 
-      <style jsx>{`
-        h1 {
+      <style global jsx>{`
+        .preview_limit {
           color: red;
         }
+
         .preview_limit {
-          color: blue;
+          margin-top: 50px;
+          display: flex;
+          border-color: green;
+        }
+        .preview_limit:before,
+        .preview_limit:after {
+          content: "";
+          flex: 1;
+          border-bottom: groove 2px;
+          border-color: light-gray;
+          margin: auto 0.25em;
         }
       `}</style>
     </>
