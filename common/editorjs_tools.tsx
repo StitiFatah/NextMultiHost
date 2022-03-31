@@ -1,6 +1,7 @@
 import Header from "@editorjs/header";
 import ImageTool from "@editorjs/image";
 import Embed from "@editorjs/embed";
+import { PreviewLimit } from "./editor_js_preview_limit_plugin/preview_limit";
 import { BASE_API_URL } from "../api_login";
 
 const configured_header = {
@@ -26,4 +27,5 @@ export const editor_js_tools = {
   header: configured_header,
   image: configured_image,
   embed: Embed,
+  preview_limit: PreviewLimit,
 };
