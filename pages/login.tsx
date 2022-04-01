@@ -9,6 +9,7 @@ import Router from "next/router";
 import Link from "next/link";
 import { get_csrf } from "../common/get_csrf";
 import { IsConnectedShort } from "../common/is_logged_short";
+import { BASE_API_URL } from "../api_login";
 
 const Login = () => {
   const zco = useStoreConnected((state) => state.zco);
@@ -53,7 +54,7 @@ const Login = () => {
     // axios request
 
     const axiosLogin = axios.create({
-      baseURL: "http://localhost:5000/",
+      baseURL: BASE_API_URL,
       timeout: 5000,
       withCredentials: true,
 

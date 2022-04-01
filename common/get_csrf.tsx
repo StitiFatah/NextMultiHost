@@ -10,7 +10,7 @@ const get_csrf = (setcsrf) => {
         let csrftoken = response.headers["x-csrftoken"];
         console.log("csrftoken :", csrftoken);
         setcsrf(csrftoken);
-        console.log("response headers", response.headers);
+        // console.log("response headers", response.headers);
       }
     })
     .catch((error) => {
