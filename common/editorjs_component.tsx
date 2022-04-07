@@ -47,8 +47,8 @@ export default function TestEditorJs() {
     editorJS.current
       .save()
       .then((response) => {
-        console.log(response);
-        console.log("hsave", zcsrftoken);
+        // console.log(response);
+        // console.log("hsave", zcsrftoken);
         create_article({
           title: title,
           description: description,
@@ -72,13 +72,17 @@ export default function TestEditorJs() {
   }) => {
     axiosInstance
       .post(
-        // "/blogsite/create_article/",
-        "/blogsite/test_simple_post/",
+        "/blogsite/create_article/",
+        // "/blogsite/test_simple_post/",
         {
           title: title,
           description: description,
           image: image,
           body: body,
+          is_post: true,
+          access: [33],
+          authors: [3],
+          tags: [{ name: "test_tag" }],
         }
         // {
         // withCredentials: true,
