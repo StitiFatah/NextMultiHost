@@ -11,7 +11,5 @@ module.exports = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
-  // images: {
-  // domains: ["dghost.archeroe.xyz", "static.ghost.org"],
-  // },
+  images: {},
 };

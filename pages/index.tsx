@@ -1,10 +1,12 @@
 import Link from "next/link";
+import Layout from "../components/layout";
 
 export default function Index() {
   return (
     <>
-      <Link href="/test_img_proxy">Image Proxy Test</Link>
-      <Link href="/test_img_proxy_1">Image Proxy Test 1</Link>
+      <Layout>
+        <div>Home Page</div>
+      </Layout>
     </>
   );
 }
