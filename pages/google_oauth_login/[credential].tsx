@@ -11,7 +11,7 @@ export default function GoogleAuthLogin() {
   const router = useRouter();
   const { credential } = router.query;
 
-  const [loginErrors, setLoginErrors] = useState({ error: "'" });
+  const [loginErrors, setLoginErrors] = useState({ error: "" });
 
   const zco = useStoreConnected((state) => state.zco);
   const zcheck = useStoreConnected((state) => state.zcheck);
@@ -48,5 +48,13 @@ export default function GoogleAuthLogin() {
     }
   }, [router.isReady]);
 
-  return <div>... Loading</div>;
+  return (
+    <>
+      {loginErrors.error ? (
+        <div>An error happened</div>
+      ) : (
+        <div>... Loading</div>
+      )}
+    </>
+  );
 }
